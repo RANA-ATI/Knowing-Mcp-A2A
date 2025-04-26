@@ -34,6 +34,10 @@ async def make_nws_request(url: str) -> dict[str, Any] | None:
 def format_alert(feature: dict) -> str:
     """Format an alert feature into a readable string."""
     props = feature["properties"]
+    
+    # .get(key, default)
+    # ----------- key: the key you want to look up.
+    # ----------- default: value to return in key doesnt exist.
     return f"""
                 Event: {props.get('event', 'Unknown')}
                 Area: {props.get('areaDesc', 'Unknown')}
